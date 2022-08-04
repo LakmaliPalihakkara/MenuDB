@@ -51,7 +51,7 @@ public class DisplayMenuAdapter extends ArrayAdapter<DataModel> {
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getContext(),MainActivity.class);
+                Intent i = new Intent(getContext(),UpdateMenu.class);
                 i.putExtra("Name", dataModal.getName());
                 i.putExtra("Id",dataModal.getId());
                 i.putExtra("Description",dataModal.getDescription());

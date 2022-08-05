@@ -16,9 +16,15 @@ import java.util.ArrayList;
 
 public class DisplayMenuAdapter extends ArrayAdapter<DataModel> {
 
+    ArrayList<DataModel> dataModalArrayList;
+    DBHelper dbHelper;
+
     // constructor for our list view adapter.
-    public DisplayMenuAdapter(@NonNull Context context, ArrayList<DataModel> dataModalArrayList) {
+    public DisplayMenuAdapter(@NonNull Context context, ArrayList<DataModel> dataModalArrayList, DBHelper dbHelper) {
         super(context, 0, dataModalArrayList);
+
+        this.dataModalArrayList = dataModalArrayList;
+        this.dbHelper = dbHelper;
     }
 
     @NonNull
@@ -66,13 +72,19 @@ public class DisplayMenuAdapter extends ArrayAdapter<DataModel> {
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getContext(),MainActivity.class);
+
+
+
+                Intent i = new Intent(getContext(),DisplayMenu.class);
                 i.putExtra("Name", dataModal.getName());
                 i.putExtra("Id",dataModal.getId());
                 i.putExtra("Description",dataModal.getDescription());
                 i.putExtra("Price",dataModal.getPrice());
                 i.putExtra("Calories",dataModal.getCalories());
                 getContext().startActivity(i);
+
+                dbHelper.deleteMenuItem(dataModalArrayList.get(position).getId());
+
 
 
             }

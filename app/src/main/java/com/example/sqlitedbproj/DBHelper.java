@@ -96,13 +96,22 @@ public ArrayList<DataModel> getMenu(SQLiteDatabase db)
     cursor.close();
     return dataModalArrayList;
 }
-
-
-    public void deleteMenuItem(String menuItemName) {
+        public void deleteMenuItem(String menuItemName) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         db.delete(TABLE_NAME, "id=?", new String[]{menuItemName});
         db.close();
     }
+
+        public void updateMenuItem(String menuItemName) {
+
+         SQLiteDatabase db = this.getWritableDatabase();
+         ContentValues values = new ContentValues();
+
+         db.update(TABLE_NAME, values,"id=?", new String[]{menuItemName});
+         db.close();
+
+       }
+
 
 }

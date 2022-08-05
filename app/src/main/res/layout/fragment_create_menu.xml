@@ -122,12 +122,13 @@
 
     <Button
         android:id="@+id/bt_create"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
+        android:layout_width="158dp"
+        android:layout_height="57dp"
         android:layout_marginTop="40dp"
         android:text="create"
         android:textColor="@color/light_blue"
         android:backgroundTint="@color/dark_blue"
+        android:background="@drawable/btn"
         app:layout_constraintTop_toBottomOf="@+id/et_calories"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"></Button>

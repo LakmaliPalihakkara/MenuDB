@@ -103,7 +103,7 @@ public ArrayList<DataModel> getMenu(SQLiteDatabase db)
         db.close();
     }
 
-        public void updateMenuItem(String menuItemName) {
+        public void updateMenuItem(String menuItemName, String description, String price, String calories) {
 
          SQLiteDatabase db = this.getWritableDatabase();
          ContentValues values = new ContentValues();

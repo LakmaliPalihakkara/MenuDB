@@ -50,7 +50,6 @@ public class UpdateMenu extends AppCompatActivity {
                 updateCalories.setText("");
 
                 Intent intent = new Intent(UpdateMenu.this, DisplayMenu.class);
-                name = getIntent().getStringExtra("name");
                 startActivity(intent);
             }
         });

@@ -1,8 +1,11 @@
 package com.example.sqlitedbproj;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -48,13 +51,16 @@ public class CreateMenuFragment extends Fragment {
                 else
                 {
 
-                dbHelper.addNewStudent(name, description, price, calories);
+                dbHelper.addMenuItem(name, description, price, calories);
 
-                Toast.makeText(getContext(), "Menu has been added.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Menu item has been added.", Toast.LENGTH_SHORT).show();
                 etName.setText("");
                 etDescription.setText("");
                 etPrice.setText("");
                 etCalories.setText("");
+
+                    Intent intent = new Intent(getActivity(), DisplayMenu.class);
+                    startActivity(intent);
                 }
 
             }

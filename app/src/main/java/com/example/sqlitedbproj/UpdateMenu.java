@@ -40,8 +40,7 @@ public class UpdateMenu extends AppCompatActivity {
                 String price = updatePrice.getText().toString();
                 String calories = updateCalories.getText().toString();
 
-                dbHelper.updateMenuItem(name, description, price, calories);
-
+                dbHelper.updateMenuItem(name, updateName.getText().toString(), updateDescription.getText().toString(), updatePrice.getText().toString(), updateCalories.getText().toString());
 
                 Toast.makeText(UpdateMenu.this, "Update Menu Item", Toast.LENGTH_SHORT).show();
                 updateName.setText("");

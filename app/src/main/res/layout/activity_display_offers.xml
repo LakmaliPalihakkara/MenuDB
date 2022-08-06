@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:backgroundTint="#FFFFFF"
-    tools:context=".DisplayMenu">
+    tools:context=".DisplayOffers">
 
 
     <LinearLayout
@@ -21,32 +21,19 @@
 
         <TextView
             android:id="@+id/title"
-            android:layout_width="283dp"
+            android:layout_width="match_parent"
             android:layout_height="35dp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="10dp"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="10dp"
             android:fontFamily="serif"
-            android:text="Menu"
+            android:text="Offers"
+            android:textAlignment="center"
             android:textColor="@color/dark_blue"
             android:textSize="24sp"
             android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/offers"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right|center_horizontal|center_vertical"
-            android:layout_marginTop="10dp"
-            android:backgroundTint="@color/dark_blue"
-            android:text="Offers"
-            android:textColor="@color/light_blue"
-            ></Button>
     </LinearLayout>
 
     <GridView
-        android:id="@+id/menu_grid_view"
+        android:id="@+id/offers_grid_view"
         android:layout_width="373dp"
         android:layout_height="470dp"
         android:numColumns="1"

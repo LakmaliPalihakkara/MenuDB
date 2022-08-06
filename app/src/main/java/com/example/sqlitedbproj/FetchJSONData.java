@@ -1,7 +1,10 @@
 package com.example.sqlitedbproj;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.widget.GridView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -14,6 +17,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 
 
 public class FetchJSONData extends AsyncTask<Void,Void,Void>
@@ -22,9 +26,6 @@ public class FetchJSONData extends AsyncTask<Void,Void,Void>
     String dataParsed = "";
     String singleParsed = "";
     Context context;
-    String promo_code;
-    String offer;
-    String expiry_date;
 
     public FetchJSONData (Context context) {
         this.context = context;
@@ -47,22 +48,9 @@ public class FetchJSONData extends AsyncTask<Void,Void,Void>
                 data = data + line;
             }
 
-            //Parsing data
-            JSONArray JA = new JSONArray(data);
-            for (int i = 0; i < JA.length(); i++) {
-                JSONObject JO = (JSONObject) JA.get(i);
-                promo_code = "promo_code:" + JO.get("promo_code");
-
-                        offer = "offer:" + JO.get("offer");
-
-                ;
-                dataParsed = dataParsed + singleParsed;
-            }
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
             e.printStackTrace();
         }
         return null;
@@ -71,8 +59,8 @@ public class FetchJSONData extends AsyncTask<Void,Void,Void>
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
-        Intent fetchDataIntent = new Intent(context, MainActivity.class);
-        fetchDataIntent.putExtra("data", this.dataParsed.toString());
+        Intent fetchDataIntent = new Intent(context, DisplayOffers.class);
+        fetchDataIntent.putExtra("data", data);
         context.startActivity(fetchDataIntent);
     }
 }

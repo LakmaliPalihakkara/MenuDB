@@ -10,17 +10,10 @@
                 android:orientation="vertical"
                 android:padding="10dp">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/c1"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:background="#D9D9D9"
-        app:cardCornerRadius="15dp">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#D9D9D9"
+            android:background="@drawable/rounded_card_with_border"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -35,7 +28,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
                     android:text="name"
-                    android:textColor="#000000"
+                    android:textColor="@color/dark_blue"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -46,7 +39,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="3dp"
                     android:text="description"
-                    android:textColor="#000000" />
+                    android:textColor="@color/dark_blue" />
 
                 <TextView
                     android:id="@+id/calories"
@@ -55,7 +48,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="3dp"
                     android:text="calories"
-                    android:textColor="#000000" />
+                    android:textColor="@color/dark_blue" />
             </LinearLayout>
 
             <LinearLayout
@@ -71,7 +64,7 @@
                     android:padding="10dp"
                     android:text="price"
                     android:textAlignment="viewEnd"
-                    android:textColor="#000000"
+                    android:textColor="@color/dark_blue"
                     android:textStyle="bold" />
 
                 <LinearLayout
@@ -86,9 +79,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom|right"
                         android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/edit_2" />
+                        app:srcCompat="@drawable/edit_4" />
 
                     <ImageView
                         android:id="@+id/delete"
@@ -96,11 +88,10 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom|right"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/delete_77_1" />
+                        app:srcCompat="@drawable/delete_1" />
                 </LinearLayout>
 
             </LinearLayout>
 
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
 </RelativeLayout>

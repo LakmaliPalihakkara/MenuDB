@@ -2,8 +2,11 @@ package com.example.sqlitedbproj;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.Toast;
 
@@ -14,6 +17,7 @@ public class DisplayMenu extends AppCompatActivity {
     ArrayList<DataModel> dataModalArrayList;
     private DBHelper dbHelper;
     SQLiteDatabase db;
+    Button offers_button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,8 +25,16 @@ public class DisplayMenu extends AppCompatActivity {
         dbHelper = new DBHelper(DisplayMenu.this);
         db = dbHelper.getReadableDatabase();
         menu_grid_view = findViewById(R.id.menu_grid_view);
+        offers_button = findViewById(R.id.offers);
         loadMenu();
-        Toast.makeText(DisplayMenu.this, "data loaded ", Toast.LENGTH_SHORT).show();
+
+        offers_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FetchJSONData process = new FetchJSONData(v.getContext());
+                process.execute();
+            }
+        });
     }
     private void loadMenu()
     {

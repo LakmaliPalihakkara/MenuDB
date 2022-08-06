@@ -41,7 +41,7 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL(query);
     }
 
-    public void addNewStudent(String name, String description, String price, String calories) {
+    public void addMenuItem(String name, String description, String price, String calories) {
 
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -96,5 +96,13 @@ public ArrayList<DataModel> getMenu(SQLiteDatabase db)
     cursor.close();
     return dataModalArrayList;
 }
+
+
+    public void deleteMenuItem(String menuItemName) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        db.delete(TABLE_NAME, "id=?", new String[]{menuItemName});
+        db.close();
+    }
 
 }

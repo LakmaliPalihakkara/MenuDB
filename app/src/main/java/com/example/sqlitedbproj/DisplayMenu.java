@@ -39,7 +39,9 @@ public class DisplayMenu extends AppCompatActivity {
     private void loadMenu()
     {
         dataModalArrayList = dbHelper.getMenu(db);
-        DisplayMenuAdapter adapter = new DisplayMenuAdapter(DisplayMenu.this, dataModalArrayList);
+        DisplayMenuAdapter adapter = new DisplayMenuAdapter(DisplayMenu.this, dataModalArrayList, dbHelper);
         menu_grid_view.setAdapter(adapter);
+
+        adapter.notifyDataSetChanged();
     }
 }

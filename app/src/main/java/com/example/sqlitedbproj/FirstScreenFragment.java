@@ -1,5 +1,6 @@
 package com.example.sqlitedbproj;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -27,11 +28,15 @@ public class FirstScreenFragment extends Fragment {
         btMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Fragment fr = new CreateMenuFragment();
-                FragmentManager fm = getActivity().getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fm.beginTransaction();
-                fragmentTransaction.replace(R.id.container, fr);
-                fragmentTransaction.commit();
+
+                Intent intent = new Intent(getActivity(), DisplayMenu.class);
+                startActivity(intent);
+
+//                Fragment fr = new CreateMenuFragment();
+//                FragmentManager fm = getActivity().getSupportFragmentManager();
+//                FragmentTransaction fragmentTransaction = fm.beginTransaction();
+//                fragmentTransaction.replace(R.id.container, fr);
+//                fragmentTransaction.commit();
             }
         });
 

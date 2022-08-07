@@ -55,19 +55,10 @@ public class UpdateMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-//                String name = updateName.getText().toString();
-//                String
-//                description = updateDescription.getText().toString();
-//                String price = updatePrice.getText().toString();
-//                String calories = updateCalories.getText().toString();
 
                 dbHelper.updateMenuItem(id,updateName.getText().toString(),updateDescription.getText().toString(), updatePrice.getText().toString(), updateCalories.getText().toString());
 
                 Toast.makeText(UpdateMenu.this, "Update Menu Item", Toast.LENGTH_SHORT).show();
-//                updateName.setText("");
-//                updateDescription.setText("");
-//                updatePrice.setText("");
-//                updateCalories.setText("");
 
                 Intent intent = new Intent(UpdateMenu.this, DisplayMenu.class);
                 startActivity(intent);

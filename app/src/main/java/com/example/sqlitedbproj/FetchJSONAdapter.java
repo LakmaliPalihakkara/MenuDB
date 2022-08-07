@@ -41,36 +41,6 @@ public class FetchJSONAdapter extends ArrayAdapter<OffersDataModel> {
         offer.setText(dataModal.getOffer());
         expiry_date.setText(dataModal.getExpiry_date());
 
-        // in below line we are using Picasso to load image from URL in our Image VIew below line is use to add item click listener for our item of list view.
-        /*edit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getContext(),MainActivity.class);
-                i.putExtra("Name", dataModal.getName());
-                i.putExtra("Id",dataModal.getId());
-                i.putExtra("Description",dataModal.getDescription());
-                i.putExtra("Price",dataModal.getPrice());
-                i.putExtra("Calories",dataModal.getCalories());
-                getContext().startActivity(i);
-
-
-            }
-        });
-
-        delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getContext(),MainActivity.class);
-                i.putExtra("Name", dataModal.getName());
-                i.putExtra("Id",dataModal.getId());
-                i.putExtra("Description",dataModal.getDescription());
-                i.putExtra("Price",dataModal.getPrice());
-                i.putExtra("Calories",dataModal.getCalories());
-                getContext().startActivity(i);
-
-
-            }
-        });*/
 
         return listitemView;
     }

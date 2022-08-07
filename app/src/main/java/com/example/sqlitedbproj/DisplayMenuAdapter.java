@@ -57,7 +57,6 @@ public class DisplayMenuAdapter extends ArrayAdapter<DataModel> {
         calories.setText(dataModal.getCalories()+" calories");
         price.setText("$" + dataModal.getPrice());
 
-        // in below line we are using Picasso to load image from URL in our Image VIew below line is use to add item click listener for our item of list view.
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -23,10 +23,10 @@
             android:name=".DisplayOffers"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".DisplayMenu"
             android:exported="false" />
         <activity
-            android:name=".DisplayMenu"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

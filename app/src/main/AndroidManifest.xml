@@ -29,15 +29,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".UpdateMenu"
-            android:exported="false" />
-        <activity
-            android:name=".DisplayOffers"
-            android:exported="false" />
-        <activity
-            android:name=".DisplayMenu"
-            android:exported="false" />
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />

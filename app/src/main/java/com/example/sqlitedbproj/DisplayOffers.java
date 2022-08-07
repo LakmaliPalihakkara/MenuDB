@@ -65,16 +65,6 @@ public class DisplayOffers extends AppCompatActivity {
             e.printStackTrace();
             Toast.makeText(DisplayOffers.this, e.toString(), Toast.LENGTH_SHORT).show();
         }
-Button cancel= findViewById(R.id.cancel);
-        cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(DisplayOffers.this,DisplayMenu.class);
-                startActivity(i);
-
-
-            }
-        });
 
 
       close.setOnClickListener(new View.OnClickListener() {

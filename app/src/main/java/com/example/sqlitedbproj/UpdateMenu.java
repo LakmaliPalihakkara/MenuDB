@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class UpdateMenu extends AppCompatActivity {
     EditText updateName, updateDescription, updatePrice, updateCalories;
-    Button updateButton;
+    Button updateButton, closeButton;
 
     private DBHelper dbHelper;
 
@@ -28,6 +28,7 @@ public class UpdateMenu extends AppCompatActivity {
         updateCalories = findViewById(R.id.et_calories);
 
         updateButton = findViewById(R.id.bt_update);
+        closeButton = findViewById(R.id.bt_close);
 
         dbHelper = new DBHelper(UpdateMenu.this);
 
@@ -51,6 +52,18 @@ public class UpdateMenu extends AppCompatActivity {
 
                 Intent intent = new Intent(UpdateMenu.this, DisplayMenu.class);
                 startActivity(intent);
+            }
+        });
+
+
+        closeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(UpdateMenu.this, DisplayMenu.class);
+                startActivity(intent);
+
+                finish();
             }
         });
     }

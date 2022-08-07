@@ -103,7 +103,24 @@ public class DBHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-    public void updateMenuItem(String name, String description, String price, String calories, String menuItemName) {
+//    public void updateMenuItem(String name, String description, String price, String calories, String menuItemName) {
+//
+//
+//        SQLiteDatabase db = this.getWritableDatabase();
+//        ContentValues values = new ContentValues();
+//
+//        values.put(NAME_COL, name);
+//        values.put(DESCRIPTION_COL, description);
+//        values.put(PRICE_COL, price);
+//        values.put(CALORIES_COL, calories);
+//
+//
+//        db.update(TABLE_NAME, values, "id=?", new String[]{menuItemName});
+//        db.close();
+//
+//    }
+
+    public void updateMenuItem(String name, String description, String price, String calories) {
 
 
         SQLiteDatabase db = this.getWritableDatabase();
@@ -115,9 +132,8 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put(CALORIES_COL, calories);
 
 
-        db.update(TABLE_NAME, values, "id=?", new String[]{menuItemName});
+        db.update(TABLE_NAME, values, "id=?", new String[]{name});
         db.close();
 
     }
-
 }

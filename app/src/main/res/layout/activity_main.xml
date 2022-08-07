@@ -8,69 +8,6 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-<!--    &lt;!&ndash;Edit text to enter Student name&ndash;&gt;-->
-<!--    <EditText-->
-<!--        android:id="@+id/idEdtStudentName"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_margin="10dp"-->
-<!--        android:hint="Enter Student Name" />-->
-
-<!--    &lt;!&ndash;edit text to enter course duration&ndash;&gt;-->
-<!--    <EditText-->
-<!--        android:id="@+id/idEdtCourseDuration"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_margin="10dp"-->
-<!--        android:hint="Enter Course Duration" />-->
-
-<!--    &lt;!&ndash;edit text to display course Description&ndash;&gt;-->
-<!--    <EditText-->
-<!--        android:id="@+id/idEdtCourseDescription"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_margin="10dp"-->
-<!--        android:hint="Enter Course Description" />-->
-
-<!--    &lt;!&ndash;edit text for course name&ndash;&gt;-->
-<!--    <EditText-->
-<!--        android:id="@+id/idEdtCourseName"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_margin="10dp"-->
-<!--        android:hint="Enter Course Name" />-->
-
-<!--    <EditText-->
-<!--        android:id="@+id/idEdtProfessorName"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_margin="10dp"-->
-<!--        android:hint="Enter Professor Name" />-->
-
-<!--    <EditText-->
-<!--        android:id="@+id/idEdtCollegeName"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_margin="10dp"-->
-<!--        android:hint="Enter College Name" />-->
-
-<!--    &lt;!&ndash;button for adding new student&ndash;&gt;-->
-<!--    <Button-->
-<!--        android:id="@+id/idBtnAddStudent"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_margin="10dp"-->
-<!--        android:text="Add Student"-->
-<!--        android:textAllCaps="false" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/idBtnUpdateStudent"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_margin="10dp"-->
-<!--        android:text="Update Student"-->
-<!--        android:textAllCaps="false" />-->
-
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"

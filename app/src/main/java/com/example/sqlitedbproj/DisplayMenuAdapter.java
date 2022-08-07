@@ -18,13 +18,15 @@ public class DisplayMenuAdapter extends ArrayAdapter<DataModel> {
 
     ArrayList<DataModel> dataModalArrayList;
     DBHelper dbHelper;
+    DisplayMenu displayMenu;
 
     // constructor for our list view adapter.
-    public DisplayMenuAdapter(@NonNull Context context, ArrayList<DataModel> dataModalArrayList, DBHelper dbHelper) {
+    public DisplayMenuAdapter(@NonNull Context context, ArrayList<DataModel> dataModalArrayList, DBHelper dbHelper, DisplayMenu displayMenu) {
         super(context, 0, dataModalArrayList);
 
         this.dataModalArrayList = dataModalArrayList;
         this.dbHelper = dbHelper;
+        this.displayMenu = displayMenu;
     }
 
     @NonNull
@@ -64,6 +66,7 @@ public class DisplayMenuAdapter extends ArrayAdapter<DataModel> {
                 i.putExtra("Price",dataModal.getPrice());
                 i.putExtra("Calories",dataModal.getCalories());
                 getContext().startActivity(i);
+                displayMenu.finish();
 
 
             }
@@ -84,7 +87,7 @@ public class DisplayMenuAdapter extends ArrayAdapter<DataModel> {
                 getContext().startActivity(i);
 
                 dbHelper.deleteMenuItem(dataModalArrayList.get(position).getId());
-
+                displayMenu.finish();
 
 
             }

@@ -1,10 +1,16 @@
 package com.example.sqlitedbproj;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,12 +33,17 @@ public class DisplayOffers extends AppCompatActivity {
     String promo_code;
     String offer;
     String expiry_date;
+    Button close;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_offers);
         String data = getIntent().getStringExtra("data");
         TextView menu= findViewById(R.id.title);
+        close = findViewById(R.id.bt_close);
+
         String str="";
       try {
         offers_list = new ArrayList<>();
@@ -54,6 +65,18 @@ public class DisplayOffers extends AppCompatActivity {
             e.printStackTrace();
             Toast.makeText(DisplayOffers.this, e.toString(), Toast.LENGTH_SHORT).show();
         }
+
+
+      close.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+              Intent intent = new Intent(DisplayOffers.this, DisplayMenu.class);
+              startActivity(intent);
+
+              finish();
+
+          }
+      });
 
     }
 }

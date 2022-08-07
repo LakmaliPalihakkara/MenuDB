@@ -41,7 +41,6 @@ public class FetchJSONAdapter extends ArrayAdapter<OffersDataModel> {
         offer.setText(dataModal.getOffer());
         expiry_date.setText(dataModal.getExpiry_date());
 
-
         return listitemView;
     }
 }

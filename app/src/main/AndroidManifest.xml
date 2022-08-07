@@ -17,6 +17,10 @@
             android:name=".CreateMenu"
             android:exported="false" />
         <activity
+
+            android:name=".DisplayMenu"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".CreateMenuFragment">
+    android:layout_height="match_parent">
 
     <Button
         android:id="@+id/bt_close"
@@ -12,6 +11,7 @@
         android:layout_height="50dp"
         android:background="@drawable/btn_close"
         android:text="X"
+        android:textSize="15dp"
         android:textColor="@color/light_blue"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"></Button>

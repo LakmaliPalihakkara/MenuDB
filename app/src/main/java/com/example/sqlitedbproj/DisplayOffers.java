@@ -43,8 +43,6 @@ public class DisplayOffers extends AppCompatActivity {
         String data = getIntent().getStringExtra("data");
         TextView menu= findViewById(R.id.title);
         close = findViewById(R.id.bt_close);
-
-        String str="";
       try {
         offers_list = new ArrayList<>();
         JSONArray JA = null;
@@ -55,7 +53,6 @@ public class DisplayOffers extends AppCompatActivity {
 
             offer = "" + JO.get("offer");
             expiry_date="Expires on " + JO.get("expiry_date");
-            str = str + promo_code;
             offers_list.add(new OffersDataModel(promo_code,offer,expiry_date));
         }
             FetchJSONAdapter adapter = new FetchJSONAdapter(DisplayOffers.this, offers_list);

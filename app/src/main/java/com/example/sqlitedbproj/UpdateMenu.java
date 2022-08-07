@@ -14,6 +14,8 @@ public class UpdateMenu extends AppCompatActivity {
     EditText updateName, updateDescription, updatePrice, updateCalories;
     Button updateButton, closeButton;
 
+    String id, name, description, price, calories;
+
     private DBHelper dbHelper;
 
 
@@ -24,33 +26,52 @@ public class UpdateMenu extends AppCompatActivity {
 
         updateName = findViewById(R.id.edit_name);
         updateDescription = findViewById(R.id.edit_description);
-        updatePrice = findViewById(R.id.et_price);
-        updateCalories = findViewById(R.id.et_calories);
+        updatePrice = findViewById(R.id.edit_price);
+        updateCalories = findViewById(R.id.edit_calories);
 
         updateButton = findViewById(R.id.bt_update);
         closeButton = findViewById(R.id.bt_close);
 
         dbHelper = new DBHelper(UpdateMenu.this);
 
+
+        Intent intent = getIntent();
+
+        if(intent != null) {
+
+            id = intent.getStringExtra("Id");
+            name = intent.getStringExtra("Name");
+            description = intent.getStringExtra("Description");
+            price = intent.getStringExtra("Price");
+            calories = intent.getStringExtra("Calories");
+
+            updateName.setText(name);
+            updateDescription.setText(description);
+            updatePrice.setText(price);
+            updateCalories.setText(calories);
+        }
+
         updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                String name = updateName.getText().toString();
-                String description = updateDescription.getText().toString();
-                String price = updatePrice.getText().toString();
-                String calories = updateCalories.getText().toString();
+//                String name = updateName.getText().toString();
+//                String
+//                description = updateDescription.getText().toString();
+//                String price = updatePrice.getText().toString();
+//                String calories = updateCalories.getText().toString();
 
-                dbHelper.updateMenuItem(name, updateName.getText().toString(), updateDescription.getText().toString(), updatePrice.getText().toString(), updateCalories.getText().toString());
+                dbHelper.updateMenuItem(id,updateName.getText().toString(),updateDescription.getText().toString(), updatePrice.getText().toString(), updateCalories.getText().toString());
 
                 Toast.makeText(UpdateMenu.this, "Update Menu Item", Toast.LENGTH_SHORT).show();
-                updateName.setText("");
-                updateDescription.setText("");
-                updatePrice.setText("");
-                updateCalories.setText("");
+//                updateName.setText("");
+//                updateDescription.setText("");
+//                updatePrice.setText("");
+//                updateCalories.setText("");
 
                 Intent intent = new Intent(UpdateMenu.this, DisplayMenu.class);
                 startActivity(intent);
+                finish();
             }
         });
 

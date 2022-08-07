@@ -96,10 +96,10 @@ public class DBHelper extends SQLiteOpenHelper {
         return dataModalArrayList;
     }
 
-    public void deleteMenuItem(String menuItemName) {
+    public void deleteMenuItem(String id) {
         SQLiteDatabase db = this.getWritableDatabase();
 
-        db.delete(TABLE_NAME, "id=?", new String[]{menuItemName});
+        db.delete(TABLE_NAME, "id=?", new String[]{id});
         db.close();
     }
 
@@ -120,19 +120,20 @@ public class DBHelper extends SQLiteOpenHelper {
 //
 //    }
 
-    public void updateMenuItem(String name, String description, String price, String calories) {
+    public void updateMenuItem(String id, String name, String description, String price, String calories) {
 
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
+        values.put(ID_COL, id);
         values.put(NAME_COL, name);
         values.put(DESCRIPTION_COL, description);
         values.put(PRICE_COL, price);
         values.put(CALORIES_COL, calories);
 
 
-        db.update(TABLE_NAME, values, "id=?", new String[]{name});
+        db.update(TABLE_NAME, values, "id=?", new String[]{id});
         db.close();
 
     }

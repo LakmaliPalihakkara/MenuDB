@@ -6,16 +6,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UpdateMenu"
-    android:paddingTop="40dp"
-    android:paddingLeft="25dp"
-    android:paddingRight="25dp">
+    android:background="@color/white">
 
+    <Button
+        android:id="@+id/bt_close"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/btn_close"
+        android:text="X"
+        android:textSize="15dp"
+        android:textColor="@color/light_blue"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></Button>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="50dp"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp">
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Update Menu"
+        android:text="Update Menu Item"
         android:textSize="30dp"
         android:textStyle="bold"
         android:textColor="@color/dark_blue"
@@ -91,6 +106,7 @@
         android:layout_marginTop="10dp"
         android:hint="Enter menu price"
         android:paddingLeft="10dp"
+        android:inputType="numberDecimal"
         android:background="@drawable/rounded_edittext"
         app:layout_constraintTop_toBottomOf="@+id/price"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -123,14 +139,16 @@
 
     <Button
         android:id="@+id/bt_update"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="158dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/btn"
+        android:backgroundTint="@color/dark_blue"
         android:text="UPDATE"
         android:textColor="@color/light_blue"
-        android:backgroundTint="@color/dark_blue"
-        app:layout_constraintTop_toBottomOf="@+id/edit_calories"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"></Button>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_calories"></Button>
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

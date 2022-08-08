@@ -10,13 +10,15 @@ public class OffersDataModel {
         // empty constructor required for firebase.
     }
 
-    // constructor for our object class.
+    // constructor for object class.
     public OffersDataModel(String promo_code, String offer, String expiry_date) {
         this.promo_code = promo_code;
         this.offer = offer;
         this.expiry_date = expiry_date;
 
     }
+
+    // getter and setter methods
 
     public String getPromo_code() {
         return promo_code;
@@ -42,6 +44,6 @@ public class OffersDataModel {
         this.expiry_date = expiry_date;
     }
 
-    // getter and setter methods
+
 
 }

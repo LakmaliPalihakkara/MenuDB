@@ -23,20 +23,20 @@ public class FetchJSONAdapter extends ArrayAdapter<OffersDataModel> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        // below line is use to inflate the layout for our item of list view.
+        // below line is use to inflate the layout for item of list view.
         View listitemView = convertView;
         if (listitemView == null) {
             listitemView = LayoutInflater.from(getContext()).inflate(R.layout.offers_gv_item, parent, false);
         }
 
-        // after inflating an item of listview item we are getting data from array list inside our modal class.
+        // after inflating an item of listview item can getting data from array list inside modal class.
         OffersDataModel dataModal = getItem(position);
 
-        // initializing our UI components of list view item.
+        // initializing UI components of list view item.
         TextView code = listitemView.findViewById(R.id.promo_code);
         TextView offer = listitemView.findViewById(R.id.offer);
         TextView expiry_date = listitemView.findViewById(R.id.expiry_date);
-        // after initializing our items we are setting data to our view. below line is use to set data to our text view.
+        // after initializing our items can setting data to our view. below line is use to set data to our text view.
         code.setText(dataModal.getPromo_code());
         offer.setText(dataModal.getOffer());
         expiry_date.setText(dataModal.getExpiry_date());

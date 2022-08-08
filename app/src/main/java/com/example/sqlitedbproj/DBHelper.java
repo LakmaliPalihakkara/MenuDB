@@ -5,7 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -64,17 +63,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public ArrayList<DataModel> getMenu(SQLiteDatabase db) {
         ArrayList<DataModel> dataModalArrayList = new ArrayList<>();
-        // Define a projection that specifies which columns from the database
-        // you will actually use after this query.
-        String[] projection = {ID_COL, NAME_COL, DESCRIPTION_COL, PRICE_COL, CALORIES_COL};
-        // Filter results WHERE "title" = 'My Title'
-        String selection = " = ?";
-        ;
-        String[] selectionArgs = {"*"};
 
-        // How you want the results sorted in the resulting Cursor
-        String sortOrder =
-                ID_COL + " DESC";
         Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
         String str = "";
         while (cursor.moveToNext()) {
@@ -102,23 +91,6 @@ public class DBHelper extends SQLiteOpenHelper {
         db.delete(TABLE_NAME, "id=?", new String[]{id});
         db.close();
     }
-
-//    public void updateMenuItem(String name, String description, String price, String calories, String menuItemName) {
-//
-//
-//        SQLiteDatabase db = this.getWritableDatabase();
-//        ContentValues values = new ContentValues();
-//
-//        values.put(NAME_COL, name);
-//        values.put(DESCRIPTION_COL, description);
-//        values.put(PRICE_COL, price);
-//        values.put(CALORIES_COL, calories);
-//
-//
-//        db.update(TABLE_NAME, values, "id=?", new String[]{menuItemName});
-//        db.close();
-//
-//    }
 
     public void updateMenuItem(String id, String name, String description, String price, String calories) {
 

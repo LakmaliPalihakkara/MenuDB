@@ -35,13 +35,13 @@ public class DisplayMenuAdapter extends ArrayAdapter<DataModel> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
-        // below line is use to inflate the layout for our item of list view.
+        // below line is use to inflate the layout for item of list view.
         View listitemView = convertView;
         if (listitemView == null) {
             listitemView = LayoutInflater.from(getContext()).inflate(R.layout.menu_gv_item, parent, false);
         }
 
-        // after inflating an item of listview item we are getting data from array list inside our modal class.
+        // after inflating an item of listview item can getting data from array list inside our modal class.
         DataModel dataModal = getItem(position);
 
         // initializing our UI components of list view item.
@@ -51,7 +51,7 @@ public class DisplayMenuAdapter extends ArrayAdapter<DataModel> {
         TextView price = listitemView.findViewById(R.id.price);
         ImageView edit = listitemView.findViewById(R.id.edit);
         ImageView delete = listitemView.findViewById(R.id.delete);
-        // after initializing our items we are setting data to our view. below line is use to set data to our text view.
+        // after initializing our items can setting data to view. below line is use to set data to our text view.
         name.setText(dataModal.getName());
         description.setText(dataModal.getDescription());
         calories.setText(dataModal.getCalories()+" calories");

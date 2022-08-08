@@ -23,8 +23,6 @@ import java.util.ArrayList;
 public class FetchJSONData extends AsyncTask<Void,Void,Void>
 {
     String data = "";
-    String dataParsed = "";
-    String singleParsed = "";
     Context context;
 
     public FetchJSONData (Context context) {

@@ -31,12 +31,6 @@ public class FirstScreenFragment extends Fragment {
 
                 Intent intent = new Intent(getActivity(), DisplayMenu.class);
                 startActivity(intent);
-
-//                Fragment fr = new CreateMenuFragment();
-//                FragmentManager fm = getActivity().getSupportFragmentManager();
-//                FragmentTransaction fragmentTransaction = fm.beginTransaction();
-//                fragmentTransaction.replace(R.id.container, fr);
-//                fragmentTransaction.commit();
             }
         });
 

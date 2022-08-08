@@ -16,6 +16,7 @@
         android:textSize="15dp"
         android:textColor="@color/light_blue"
         app:layout_constraintRight_toRightOf="parent"
+        android:scrollbars="vertical"
         app:layout_constraintTop_toTopOf="parent"></Button>
 
     <LinearLayout
